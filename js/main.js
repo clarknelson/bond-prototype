@@ -15,7 +15,18 @@ $(document).ready(function(){
   function convert_to_deg(rad){
     return rad * (180 / Math.PI);
   }
+
+  // $(window).mousemove(function(e){
+  //   console.log(e.originalEvent.clientX);
+  //   console.log(e.originalEvent.clientY);
+  //
+  //
+  // })
+
+
   function buildSection(text_a, text_b, target){
+
+    var $window = $(window);
     var $container = $(target);
     var text1 = new Blotter.Text(text_a, textOptions);
     var text2 = new Blotter.Text(text_b, textOptions);
@@ -24,9 +35,10 @@ $(document).ready(function(){
     blotter.forText(text1).appendTo($container[0]);
     blotter.forText(text2).appendTo($container[0]);
 
-    $container.mousemove(function(e){
-      var halfWidth = parseInt($container.innerWidth() / 2);
-      var halfHeight = parseInt($container.innerHeight() / 2);
+    $window.mousemove(function(e){
+      var halfWidth = parseInt($window.innerWidth() / 2);
+      var halfHeight = parseInt($window.innerHeight() / 2);
+
       var left = e.originalEvent.clientX;
       var top = e.originalEvent.clientY;
 
@@ -54,11 +66,11 @@ $(document).ready(function(){
       blotter.material.uniforms.uRotation.value = finalDegree;
       blotter.material.uniforms.uAnimateNoise.value = 0.0;
     });
-    $container.mouseout(function(e){
-      blotter.material.uniforms.uOffset.value = 0.05;
-      blotter.material.uniforms.uRotation.value = 30;
-      // blotter.material.uniforms.uApplyBlur.value = 0.0;
-    });
+    // $container.mouseout(function(e){
+    //   blotter.material.uniforms.uOffset.value = 0.05;
+    //   blotter.material.uniforms.uRotation.value = 30;
+    //   // blotter.material.uniforms.uApplyBlur.value = 0.0;
+    // });
   }
   buildSection('we foster', 'community', '.section-a .blotter-text')
   buildSection('we create', 'experiences', '.section-b .blotter-text')
