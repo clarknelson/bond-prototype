@@ -1,0 +1,3 @@
+[submodule "Blotter"]
+	path = Blotter
+	url = https://github.com/bradley/Blotter.git
