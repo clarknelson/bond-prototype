@@ -105,12 +105,12 @@ textarea {
 @font-face{
   font-family: 'Avenir Next';
   font-weight: bold;
-  src: url('/fonts/AvenirNext-Bold.woff');
+  src: url('fonts/AvenirNext-Bold.woff');
 }
 @font-face{
   font-family: 'Avenir Next';
   font-weight: normal;
-  src: url('/fonts/AvenirNext-Medium.woff');
+  src: url('fonts/AvenirNext-Medium.woff');
 }
 body{
   font-family: 'Avenir Next', sans-serif;
